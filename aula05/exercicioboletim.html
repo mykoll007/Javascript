@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04</title>
+</head>
+<body>
+    <h1>Aula 04</h1>
+    <h4>Cadastro de Notas</h4>
+    <label for="nome">Nome completo:</label>
+    <input type="text" name="nome" id="nome">
+
+    <label for="serie">Série:</label>
+    <input type="text" name="serie" id="serie">
+
+    <label for="materia">Matéria:</label>
+    <select id="materia" name="materia">
+        <option value="Português">Português</option>
+        <option value="Matemática">Matemática</option>
+    </select>
+
+    <label for="bim1">Bimestre 1:</label>
+    <input type="text" name="bim1" id="bim1">
+
+    <label for="bim2">Bimestre 2:</label>
+    <input type="text" name="bim2" id="bim2">
+
+    <label for="bim3">Bimestre 3:</label>
+    <input type="text" name="bim3" id="bim3">
+
+    <label for="bim4">Bimestre 4:</label>
+    <input type="text" name="bim4" id="bim4">
+
+    <label for="media">Média</label>
+    <input type="text" name="media" id="media" readonly>
+
+    <button id="calcular">Calcular</button>
+   
+    <h4>Boletim de notas</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome completo</th>
+                <th>Matéria</th>
+                <th>Bim 1</th>
+                <th>Bim 2</th>
+                <th>Bim 3</th>
+                <th>Bim 4</th>
+                <th>Média</th>
+                <th>Situação</th>
+            </tr>
+        </thead>
+        <tbody id="boletim"></tbody>
+    </table>
+
+
+
+    <script>
+        var nome = document.getElementById("nome")
+        var serie = document.getElementById("materia")
+        var materia = document.getElementById("materia")
+        var bim1 = document.getElementById("bim1")
+        var bim2 = document.getElementById("bim2")
+        var bim3 = document.getElementById("bim3")
+        var bim4 = document.getElementById("bim4")
+        var calcular = document.getElementById("calcular")
+        var boletim = document.getElementById("boletim");
+
+        var nomes = [];
+        var materias = [];
+        var aBim1 = [];
+        var aBim2 = [];
+        var aBim3 = [];
+        var aBim4 = [];
+
+        calcular.addEventListener("click", function(){
+            nomes.push(nome.value)
+            materias.push(materia.value)
+            aBim1.push(parseInt(bim1.value))
+            aBim2.push(parseInt(bim2.value))
+            aBim3.push(parseInt(bim3.value))
+            aBim4.push(parseInt(bim4.value))
+
+            nome.value = ""
+            materia.value = ""
+            bim1.value = ""
+            bim2.value = ""
+            bim3.value = ""
+            bim4.value = ""
+
+            mostrarBoletim();
+        })
+
+        function mostrarBoletim(){
+           var aux = "";
+        
+           for (var cont = 0; cont < nomes.length; cont++) {
+                var media = (aBim1[cont] + aBim2[cont] +aBim3[cont] + aBim4[cont]) / 4
+                aux += '<tr>'
+                            + '<td>' + nomes[cont] + '</td>'
+                            + '<td>' + materias[cont] + '</td>'
+                            + '<td>' + aBim1[cont] + '</td>'
+                            + '<td>' + aBim2[cont] + '</td>'
+                            + '<td>' + aBim3[cont] + '</td>'
+                            + '<td>' + aBim4[cont] + '</td>'
+                            + '<td>' + media + '</td>';
+                            if(media >= 7) {
+                                aux += '<td> Aprovado </td>'
+                            } else {
+                                aux += '<td>Reprovado</td>' 
+                            }
+
+                        aux += '</tr>';
+            }
+
+            boletim.innerHTML = aux;
+        }
+
+        
+
+
+
+    </script>
+
+</body>
+</html>

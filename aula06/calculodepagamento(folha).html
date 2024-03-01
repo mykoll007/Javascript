@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Folha de Pagamento</h4>
+
+    <label for="nome">Nome Completo:</label>
+    <input type="text" name="nome" id="nome">
+
+    <label for="cargo">Cargo:</label>
+    <input type="text" name="cargo" id="cargo">
+
+    <label for="salario">Salário:</label>
+    <input type="text" name="salario" id="salario">
+
+    <button id="btn-gerar-folha">Clicar</button>
+
+    <div id="relatorio">
+
+    </div>
+
+    <script>
+          // Pegando do HTML e transformando em variável 
+        var botaogerar = document.getElementById("btn-gerar-folha");
+        var relatorio = document.getElementById("relatorio")
+
+
+        //Dando a função especialmente para o efeito do meu clique
+        botaogerar.addEventListener("click", function(){
+            //Variáveis dos inputs
+            var nome = document.getElementById("nome");
+            var cargo = document.getElementById("cargo");
+            var salario = document.getElementById("salario");
+
+            //Variáveis para os calculos
+            var descVT = 0;
+            var descINSS = 0;
+            var descVR = 0;
+            var salarioLiquido = 0;
+
+            //Desconto do VT
+            descVT = parseFloat(salario.value) * 0.06
+
+            //Desconto do VR
+            if(parseFloat(salario.value) > 2500)
+            {
+                descVR = 150
+            } else{
+                descVR = 120;
+            }
+
+            //Desconto do INSS
+            if(parseFloat(salario.value) <= 1412){
+                descINSS = 105.90
+            }
+            else if(parseFloat(salario.value) > 1412 && 
+            parseFloat(salario.value) <= 2666.68){
+                descINSS = 105.90 + 112.92
+            }
+            else if(parseFloat(salario.value) > 2666.68 && parseFloat(salario.value) <= 4000.03){
+                descINSS = 105.90 + 112.92 + 160
+            }
+            else{
+                descINSS = 105.90 + 112.92 + 160 + 530.04
+            }
+            //Dando valor para salario Liquido
+            var salarioLiquido = parseFloat(salario.value) - (descINSS + descVR + descVT)
+
+            // Aqui embaixo inserindo o efeito do clique adicionando o que eu quero embaixo
+            relatorio.innerHTML = "<p>Nome Completo: " + nome.value + "</p>" + "<p>Cargo: " + cargo.value + 
+                                    "</p>" + "<p> Salario Líquido: " + salario.value + "</p>"
+
+        // Essa foi a função que meu efeito do clique teve, a partir daqui acaba 
+        })
+
+
+
+    </script>
+
+</body>
+</html>

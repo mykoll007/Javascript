@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="paragrafo1">Olá mundo</p>
+    <button id="botao">Clique aqui</button>
+
+
+    <script>
+        var paragrafo = document.getElementById("paragrafo1") // pegando o ID html em "" e fazendo uma variavel 
+        var botao = document.getElementById("botao") // pegando o ID html em "" e fazendo uma variavel
+
+        botao.addEventListener("click", function () {      // Adicionando a variável escolhida e dando uma função através do clique
+            paragrafo.innerText = "Aula 03 - Javascript" //Inserindo a variável escolhida e pedindo pra inserir um texto(innerText) = "texto"
+        })
+    </script>
+</body>
+
+</html>

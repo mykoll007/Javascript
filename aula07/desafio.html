@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 07 - Arrays</title>
+
+    <style>
+        .frutas{
+            background-color: black;
+            color: white;
+        }
+
+        .CorBanana{
+            background-color: yellow;
+            color: black;
+        }
+        .CorMaça{
+            background-color: red;
+            color: black;
+        }
+        .CorPera{
+            background-color: green;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Frutas e suas cores</h1>
+    <p class="frutas" id="banana">Banana</p>
+    <button onclick="mudarCorBanana()">Cor</button>
+    <p class="frutas" id="maça">Maçã</p>
+    <button onclick="mudarCorMaça()">Cor</button>
+    <p class="frutas" id="pera">Pêra</p>
+    <button onclick="mudarCorPera()">Cor</button>
+    <hr>
+    <h1>Mostrar Frutas</h1>
+    <button onclick="mostrarFrutas()">Mostrar</button>
+   
+
+    <script>
+       let banana = document.getElementById("banana")
+       let maça = document.getElementById("maça")
+       let pera = document.getElementById("pera")
+    
+        
+
+       function mudarCorBanana(){
+            banana.classList.toggle("CorBanana")
+       }
+       function mudarCorMaça(){
+            maça.classList.toggle("CorMaça")
+       }
+       function mudarCorPera(){
+            pera.classList.toggle("CorPera")
+       }
+
+       let frutas = ["Banana " , "Maçã " , "Pera"]
+
+       for (let index = 0; index < frutas.length; index++){
+            console.log(frutas[index])
+        }
+
+        function mostrarFrutas(){
+             console.log(frutas)
+   
+        }
+
+       
+
+
+  
+    </script>
+</body>
+</html>

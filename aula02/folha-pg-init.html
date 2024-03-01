@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - Folha de Pagamento</title>
+</head>
+
+<body>
+    <script>
+        /*
+            VT - 6% - 0.06
+            VR - SE SALÁRIO FOR ATÉ 2500 = R$ 180
+            VR - SE SALÁRIO FOR ACIMA DE 2501 = R$ 250
+            NOME, SALÁRIO, DEPARTAMENTO
+        */
+        var nome = prompt("Nome Completo: ")
+        var departamento = prompt("Qual departamento você trabalha?")
+        var salario = parseFloat(prompt("Salário: "))
+
+        var descontoVT = salario * 0.06
+
+        var descontoVR = 0
+        if (salario <= 2500) {
+            descontoVR = 180
+        }
+
+        else   {
+            descontoVR = 250
+        }
+
+        var totaldesconto = (salario - descontoVR - descontoVT)
+
+        alert("Olá " + nome + " da área de " + departamento + " você terá seu VT recebido com valor de " + descontoVT + " e o seu salário com desconto do VR vai ser de " + totaldesconto + " descontando apenas " + descontoVR + " de VR.")
+
+    </script>
+</body>
+
+</html>

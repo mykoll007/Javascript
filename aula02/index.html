@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02</title>
+</head>
+
+<body>
+    <script>
+        //SE - senao (condicionais)
+        //OPERADORES LÓGICOS
+        /*
+              VERIFICAÇÃO DE MÉDIA ESCOLAR
+               MÉDIA = N1 + N2 + N3 + N4 / 4
+   
+               PARA QUE O ALUNO SEJA APROVADO
+               A MÉDIA TEM QUE SER MAIOR OU IGUAL A 6 PARA A
+               APROVAÇÃO DO ALUNO, SENÃO O ALUNO ESTÁ REPROVADO.
+   
+   
+  VISUALG         SE MEDIA >=6 ENTAO
+                  ESCREVAL(APROVADO)
+               SENAO
+                  ESREVAL(REPROVADO)              
+   
+   
+        */
+        var MEDIA = (5 + 6 + 7 + 8) / 4
+
+        if (media >= 6) //SE MEDIA >=6 ENTAO
+        { alert("Aprovado") }
+        else //SENAO
+        { alert("Reprovado") }
+
+        /*
+           SE MEDIA >= 6 ENTAO
+               APROVADO
+           SENAO SE MEDIA == 5 ENTAO
+               RECUPERAÇÃO
+           SENAO
+               REPROVADO    */
+        if(media >= 6) { // SE (MEDIA >= 6 ) ENTAO
+            alert("Aprovado")
+        } else if(media == 5){ //SENAO SE (MEDIA == 5) ENTAO
+            alert("Recuperação")
+        } else{ // SENAO
+            alert("Reprovado")
+        }
+
+        /*    OPERADORES DE COMPARAÇÃO
+        == IGUALDADE
+        >= MAIOR OU IGUAL
+        <= MENOR OU IGUAL
+        > MAIOR QUE
+        < MENOR QUE
+        != DIFERENÇA 
+        <> DIFERENÇA
+        === IGUALDADE ESTRITA
+
+        BOOLEANOS / BOOLEAN ( TRUE / FALSE )
+        --------- TABELA VERDADE (E) ----------
+        E1 E2 E1 AND E2
+        V  V      V
+        V  F      F
+        F F       F
+        ---------- TABELA VERDADE (OU)
+        E1 E2 E1 OR E2
+        V  V      V
+        V  F      V
+        F  F      F
+        
+        (1 >= 2) F
+        (1 == 2) F ||(2 > 1) V -> V
+        (10 >= 5) V && (20 != 10) V -> V
+      */
+        var num = parseInt(prompt("Digite um numero: "))
+        var num2 = parseInt(prompt("Digite outro numero: "))
+        alert(num + num2)
+
+
+
+    </script>
+</body>
+
+</html>
