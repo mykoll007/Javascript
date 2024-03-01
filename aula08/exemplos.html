@@ -12,6 +12,11 @@
     </style>
 </head>
 <body>
+    <h1>Tito's Market</h1>
+    <p>carrinho
+        <span id="itens"></span>
+        <span id="total"></span>
+    </p>
     <form id="formulario">
         <label>Produto</label>
         <input type="text" name="produto">
@@ -19,13 +24,14 @@
         <input type="text" name="preço">
         <label>QTD</label>
         <input type="text" name="qtd">
-        <button>Cadastrar</button>
+        <button id="botao">Adicionar um carrinho</button>
     </form>
 
     <script>
         let formulario = document.getElementById("formulario")
+        let botao = document.getElementById("botao")
 
-        formulario.addEventListener("submit", function(){
+        botao.addEventListener("click", function(){
             event.preventDefault();
 
             validar(formulario.produto)
