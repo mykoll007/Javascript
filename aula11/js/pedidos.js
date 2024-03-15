@@ -32,6 +32,9 @@ historico_pedidos.map(dados_cliente =>{
 })
 
 let divHistorico = document.getElementById("historico")
+
+
+
 let aux = "";
 pedidos.map(item => {
     
